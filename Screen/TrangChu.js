@@ -13,6 +13,7 @@ import { Entypo } from '@expo/vector-icons';
 
 
 export default class TrangChu extends Component {
+
     render() {
         // neu la class component thi can phai su dung this.props
         const { navigation } = this.props
@@ -52,7 +53,8 @@ export default class TrangChu extends Component {
                             style={styles.avatar}
                         />
                         <TouchableOpacity>
-                            <Text style={styles.XemChiTiet}>Xem chi tiết</Text>
+                            <Text style={styles.XemChiTiet}
+                            >Xem chi tiết</Text>
                         </TouchableOpacity>
                         <View style={styles.titThongTinSV}>
                             <View style={styles.cot1TTSV}>
@@ -60,7 +62,7 @@ export default class TrangChu extends Component {
                                     MSSV: 19528321
                                 </Text>
                                 <Text style={styles.txtTTSV}>
-                                    Họ tên: Lê Văn Tùng
+                                    Họ Tên: Lê Văn Tùng
                                 </Text>
                                 <Text style={styles.txtTTSV}>
                                     Giới tính: Nam
@@ -105,7 +107,9 @@ export default class TrangChu extends Component {
                             <Ionicons name="notifications-circle-outline" size={24} color="black" />
                         </View>
                         <TouchableOpacity>
-                            <Text style={styles.xemChiTietTB}>
+                            <Text style={styles.xemChiTietTB}
+                                onPress={() => { navigation.navigate('Ghi chú nhắc nhở') }}
+                            >
                                 Xem chi tiết
                             </Text>
                         </TouchableOpacity>
@@ -167,14 +171,24 @@ export default class TrangChu extends Component {
                     </View>
                     {/* Hàng ngang thứ 2 */}
                     <View style={styles.partChucNangSinhVien}>
-                        <View style={styles.partCot1}>
-                            <AntDesign name="book" size={30} color="mediumturquoise"
-                                style={styles.calendar2}
-                            />
-                            <Text style={styles.txtCot1}>
-                                Đăng ký học phần
-                            </Text>
+                        {/* Đăng ký học phần */}
+
+                        <View style={styles.partCot1}  >
+                            <TouchableOpacity>
+                                <AntDesign name="book" size={30} color="mediumturquoise"
+                                    style={styles.calendar2}
+                                    onPress={() => { navigation.navigate('Đăng ký học phần') }}
+                                />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Text style={styles.txtCot1}
+                                    onPress={() => { navigation.navigate('Đăng ký học phần') }}
+                                >
+                                    Đăng ký học phần
+                                </Text>
+                            </TouchableOpacity>
                         </View>
+
                         <View style={styles.partCot2}>
                             <Feather name="dollar-sign" size={30} color="mediumturquoise"
                                 style={styles.calendar2}
@@ -242,10 +256,10 @@ export default class TrangChu extends Component {
                             ______________________________________________________________________
                         </Text>
                         <Text style={styles.txtLopHocPhan}>
-                             19528321 Khóa luận tốt nghiệp
+                            19528321 Khóa luận tốt nghiệp
                         </Text>
                         <Text style={styles.txtLopHocPhan}>
-                             19528321 Thực tập doanh nghiệp
+                            19528321 Thực tập doanh nghiệp
                         </Text>
                     </View>
                 </View>
@@ -489,8 +503,8 @@ const styles = StyleSheet.create({
         marginLeft: 70,
         marginTop: 25,
     },
-    txtLopHocPhan:{
-        fontSize:14,
+    txtLopHocPhan: {
+        fontSize: 14,
 
     },
 
